@@ -80,10 +80,18 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  primary:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
+
+  queue:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
 
   cable:
-    adapter: postgresql
+    <<: *default
     url: <%= ENV["DATABASE_URL"] %>
-    channel_prefix: shop_production
+
+  cache:
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
