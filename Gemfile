@@ -65,3 +65,10 @@ end
 gem "jsbundling-rails", "~> 1.3"
 
 gem "bcrypt", "~> 3.1.7"
+
+gem "devise"
+
+gem "react-rails"
+
+
+gem "webpacker", "~> 5.4"
